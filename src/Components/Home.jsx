@@ -65,7 +65,8 @@ const Home = () => {
       ) : (
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold mb-4">
-            {selectedPost ? `Details for Post id ${selectedPost}` : "Posts"}
+            {/* {selectedPost ? `Details for Post id ${selectedPost}` : "Posts"} */}
+            {selectedPost && `Details for Post id ${selectedPost}`}
           </h1>
           {selectedPost ? (
             <div className="flex justify-end">
@@ -88,8 +89,8 @@ const Home = () => {
               </button>
             </div>
           )}
-          <div className="-mx-4">
-            <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
+          <div className="-mx-4 w-full">
+            <div className="inline-block min-w-full shadow rounded-lg overflow-hidden w-full">
               <CreatePostForm
                 showModal={showModal}
                 setShowModal={setShowModal}
@@ -98,7 +99,8 @@ const Home = () => {
                 size={size}
                 setSize={setSize}
               />
-              <div className="h-96 overflow-y-scroll">
+              {/* <div className="h-96 overflow-y-scroll"> */}
+              <div>
                 {selectedPost ? (
                   <CommentBody comments={comments} />
                 ) : (

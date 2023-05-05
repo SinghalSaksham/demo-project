@@ -34,7 +34,7 @@ export default function CreatePostForm({
       setUserId("");
       setTitle("");
       setShowModal(false);
-      setSize(size + 1);
+      setSize((prevSize) => prevSize + 1);
     } catch (error) {
       console.error(error);
     }
